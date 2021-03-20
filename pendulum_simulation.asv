@@ -1,0 +1,13 @@
+%% variables
+disp0 = 0.5;
+Avel = 0;
+g = 9.81;
+delta_t = 0.01;
+
+%% initial states
+y(1,:)=[disp0 0];
+
+%%loop
+for i = 1:20
+    y(i+1,:) = y(i,:)+ delta_t*[y(i,2), -g*sin(y(i,1))/2];
+end
